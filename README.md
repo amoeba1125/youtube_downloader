@@ -7,8 +7,8 @@ Windows系統請使用./venv/Script/activate.bat
 Linux系統請使用./venv/Script/activate
 ### 設定檔案說明
 config.json內可設定以下參數
-{
-	"paths": {								// {channel_name}表示頻道名稱
+```
+"paths": {								// {channel_name}表示頻道名稱
 		"videos": "{channel_name}/videos",	// 影片存放路徑
 		"shorts": "{channel_name}/shorts",	// 短影片存放路徑
 		"live": "{channel_name}/live",		// 直播存放路徑
@@ -23,7 +23,8 @@ config.json內可設定以下參數
 		"live": true						// 是否下載直播
 	}
 }
-### 執行
+##
+```# 執行
 於專案根目錄開啟終端機並輸入指令
 (Windows系統)
 ```bash

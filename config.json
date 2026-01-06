@@ -1,0 +1,16 @@
+{
+  "paths": {
+    "videos": "{channel_name}/videos",
+    "shorts": "{channel_name}/shorts",
+    "live": "{channel_name}/live",
+    "posts": "{channel_name}/posts"
+  },
+  "channels_text": "channels.txt",
+  "max_entries": 10,
+  "sleep_seconds": 900,
+  "download": {
+    "videos": true,
+    "shorts": true,
+    "live": true
+  }
+}

@@ -1,10 +1,10 @@
 ## youtube-downloader使用說明
 ---
 ### 安裝
-需要python3.10以上
-相關依賴套件已包含在虛擬環境中
-Windows系統請使用./venv/Script/activate.bat
-Linux系統請使用./venv/Script/activate
+需要python3.10以上  
+相關依賴套件已包含在虛擬環境中  
+Windows系統請使用./venv/Script/activate.bat  
+Linux系統請使用./venv/Script/activate  
 ### 設定檔案說明
 config.json內可設定以下參數
 ```
@@ -25,11 +25,13 @@ config.json內可設定以下參數
 }
 ```
 ### 執行
-於專案根目錄開啟終端機並輸入指令
-建立並進入虛擬環境(可選)
+於專案根目錄開啟終端機並輸入指令  
+建立並進入虛擬環境(可選)  
+```
 python -m venv venv
 venv/Script/activate
-安裝依賴
-pip install -r requirements.txt
-執行程式
-python main.py
+```  
+安裝依賴  
+```pip install -r requirements.txt```  
+執行程式  
+```python main.py```

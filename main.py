@@ -3,8 +3,11 @@ import json
 from pathlib import Path
 import time
 import yt_dlp
+import urllib.request
+import socket
+import subprocess
 
-BASE_DIR = Path(__file__).parent  # main.py 所在資料夾
+BASE_DIR = Path(__file__).parent        # main.py 所在資料夾
 
 with open("config.json", "r", encoding="utf-8") as f:
     config = json.load(f)
@@ -15,10 +18,18 @@ def resolve_path(template, **kwargs):
         return p
     return (BASE_DIR / p).resolve()
 
+IF_BGUTIL = False                       # 是否已啟用bgutil
 CHANNELS_FILE = config["channels_text"] # 下載的頻道列表
 MAX_ENTRIES = config["max_entries"]     # 每種類型抓最新幾支
 SLEEP_SECONDS = config["sleep_seconds"] # 檢查間隔時間
 DOWNLOAD = config.get("download", {})
+
+def is_bgutil_running() -> bool:
+    try:
+        with urllib.request.urlopen("http://127.0.0.1:4416", timeout=1) as resp:
+            return resp.status == 200
+    except Exception:
+        return False
 
 def is_video_downloaded(video_id, folder):
     """檢查影片是否已下載"""
@@ -32,6 +43,12 @@ def download_video(video_url, folder):
         'quiet': False,
         'live_from_start': True  # 確保抓完整直播
     }
+    if is_bgutil_running():
+        ydl_opts['extractor_args'] = {
+            'youtubepot-bgutilhttp': [
+                'base_url=http://127.0.0.1:4416'
+            ]
+        }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([video_url])
 

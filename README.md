@@ -1,10 +1,10 @@
 ## youtube-downloader使用說明
 ---
 ### 安裝
-需要python3.10以上
-相關依賴套件已包含在虛擬環境中
-Windows系統請使用./venv/Script/activate.bat
-Linux系統請使用./venv/Script/activate
+需要python3.10以上  
+相關依賴套件已包含在虛擬環境中  
+Windows系統請使用./venv/Script/activate.bat  
+Linux系統請使用./venv/Script/activate  
 ### 設定檔案說明
 config.json內可設定以下參數
 ```
@@ -25,27 +25,33 @@ config.json內可設定以下參數
 }
 ```
 ### 執行
-於專案根目錄開啟終端機並輸入指令
+於專案根目錄開啟終端機並輸入指令  
 首次：
-安裝並執行bgutil
-```git clone https://github.com/Brainicism/bgutil-ytdlp-pot-provider.git
-cd bgutil-ytdlp-pot-provider/server
-npm install
-npx tsc
-node build/main.js --port 4416```
-建立並進入虛擬環境
-```python -m venv venv
-venv/Script/activate```
-安裝依賴
-```pip install -r requirements.txt```
-執行主程式
-```python main.py```
+> 安裝並執行bgutil
+> ```
+> git clone https://github.com/Brainicism/bgutil-ytdlp-pot-provider.git
+> cd bgutil-ytdlp-pot-provider/server
+> npm install
+> npx tsc
+> node build/main.js --port 4416
+> ```
+> 建立並進入虛擬環境
+> ```
+> python -m venv venv
+> venv/Script/activate
+> ```
+> 安裝依賴
+> ```pip install -r requirements.txt```
+> 執行主程式
+> ```python main.py```
 
 首次以外：
-執行bgutil
-```cd bgutil-ytdlp-pot-provider/server
-node build/main.js --port 4416```
-進入虛擬環境
-```venv/Script/activate```
-執行主程式
-```python main.py```
+> 執行bgutil
+> ```
+> cd bgutil-ytdlp-pot-provider/server
+> node build/main.js --port 4416
+> ```
+> 進入虛擬環境
+> ```venv/Script/activate```
+> 執行主程式
+> ```python main.py```
